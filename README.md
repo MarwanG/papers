@@ -29,6 +29,21 @@ Install python3, flask, sqlite3, and ghostscript
 4. ./run.sh
 
 
+Installation via virutalenv
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install virtualenv
+
+0. run virtualenv-3.2 VENV
+
+1. source ./VENV/bin/activate
+
+2. pip install flask
+
+3. ./run.sh
+
+
+
 AUTHOR(S)
 ---------
 
