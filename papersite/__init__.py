@@ -1,10 +1,10 @@
-import papersite.config
+from papersite.config import appc
 from flask import Flask
 
 app = Flask(__name__,
             static_folder='../static',
             template_folder='../templates')
-app.config.update(papersite.config.appc)
+app.config.update(appc)
 
 import papersite.db
 import papersite.user

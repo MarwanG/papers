@@ -11,3 +11,4 @@ papers.db
 previews
 pdfs
 README.old
+*.pyc
