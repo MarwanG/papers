@@ -30,7 +30,7 @@ Install python3, flask, sqlite3, and ghostscript
 
 
 Installation via virutalenv
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Install virtualenv
 
