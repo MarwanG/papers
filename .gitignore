@@ -12,3 +12,8 @@ previews
 pdfs
 README.old
 *.pyc
+.htaccess
+apache.conf
+apache2.conf
+papers.cgi
+papers.wsgi
