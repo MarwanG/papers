@@ -10,12 +10,12 @@
             {% if user_authenticated() %}
              {% if liked %}
               <a 
-                href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}/unlike"
+                href="{{url_for('unlike_paper', paperid=entry.paperid|e, title=entry.title|e)}}"
                 title="Unlike this paper"
                 class="liked"
                 >★</a>
               {% else %}
-               <a href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}/like"
+               <a href="{{url_for('like_paper', paperid=entry.paperid|e, title=entry.title|e)}}"
                   title="Click if you like this paper">☆</a>
               {% endif %}
             {% else %} {# anonymous #}
@@ -58,25 +58,25 @@
              {% set comma = joiner(",") %}
              {% for a in authors %}{{
              comma()}}
-             <a href="/author/{{a.fullname | e}}">{{a.fullname}}</a>{%
+             <a href="{{url_for('author', fullname=a.fullname|e)}}">{{a.fullname}}</a>{%
              endfor %}
 
              <br/>Domains:
              {% set comma = joiner(",") %}
              {% for d in domains %}{{
              comma()}}
-             <a href="/domain/{{d.domainname | e}}">{{d.domainname}}</a>{% 
+             <a href="{{url_for('domain', domainname=d.domainname|e)}}">{{d.domainname}}</a>{% 
              endfor %}
 
              <br/> Keywords:
              {% set comma = joiner(",") %}
              {% for k in keywords %}{{
              comma()}}
-             <a href="/keyword/{{k.keyword | e}}">{{k.keyword}}</a>{%
+             <a href="{{url_for('keyword', keyword=k.keyword|e)}}">{{k.keyword}}</a>{%
              endfor %}
              
              <br/> Uploaded by:
-             <a href="/{{entry.username | e}}">{{entry.username}}</a>
+             <a href="{{url_for('usersite', username=entry.username|e)}}">{{entry.username}}</a>
              
              <br/> Upload date: {{entry.createtime | e}}
              </div>

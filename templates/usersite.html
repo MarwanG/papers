@@ -3,7 +3,7 @@
 {% block title %}{{user['username'] | e}} — {% endblock %}
 {% block banner2 %}  
 /
-<a href="/{{user['username'] | e}}" 
+<a href="{{url_for('usersite', username = user['username'] | e)}}" 
    title="Papers liked/uploaded by {{user['username'] | e}}">
  {{user['username'] | e}}
 </a>
@@ -27,7 +27,7 @@
           user['userid'] == session['user']['userid'] %}
       <br>
       <div style="text-align:right">
-        <a href="/editinfo">Edit your personal information</a> </div>
+        <a href="{{url_for('editinfo')}}">Edit your personal information</a> </div>
     {% endif %}
 
 
@@ -43,7 +43,7 @@
   </p>
 
   <div style="margin-left:1ex; margin-top: 2em; margin-bottom: 1ex">
-    <a href="/follow/{{user['username'] | e}}" title="Follow this user" class="btn">
+    <a href="... url_for('follow', user['username'] | e).." title="Follow this user" class="btn">
       Follow this user</a>
   </div>
   -->

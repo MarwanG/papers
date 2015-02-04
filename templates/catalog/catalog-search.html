@@ -4,7 +4,7 @@
 
 {% block before_list %}
     <div class="search-big">
-      <form action="/catalog" method="get">
+      <form action="{{url_for('catalog')}}" method="get">
         Search: 
         <input type="search"
                value="{{request.args.q|e}}" 

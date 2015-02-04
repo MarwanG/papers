@@ -11,7 +11,7 @@
       {% if c.userid == 1 %}
           Stranger:
       {% else %}
-        <a href="/{{c.username|e}}">
+        <a href="{{url_for('usersite',username=c.username|e)}}">
           {{ c.username|e }}:</a>
       {% endif %}
         <a name="comment-{{c.commentid}}"></a>

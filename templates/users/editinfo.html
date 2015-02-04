@@ -5,7 +5,7 @@
 
 
 
-  <form action="/editinfo" method="post" class=usualform
+  <form action="{{url_for('editinfo')}}" method="post" class=usualform
         style="max-width: 40em">
     {% if error %}
     <p class=error><strong>Error:</strong> {{ error }}

@@ -104,7 +104,7 @@ def all(page=1):
                            commentsHead=commentsHead,
                            likes=likes,liked=liked,
                            maxpage=maxpage, curpage=page,
-                           headurl='/all')
+                           headurl=app.config['APPLICATION_ROOT'] + '/all')
 
 
 @app.route('/')
@@ -163,4 +163,4 @@ def usersite(username,page=1):
                            commentsHead=commentsHead,
                            likes=likes,liked=liked,
                            maxpage=maxpage, curpage=page,
-                           headurl='/'+username)
+                           headurl=app.config['APPLICATION_ROOT']+'/'+username)

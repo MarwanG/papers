@@ -5,7 +5,7 @@
 
 
 
-  <form action="/change-password" method="post" class=usualform
+  <form action="{{url_for('new_password_link')}}" method="post" class=usualform
         style="width: 22em;">
     {% if error %}
     <p class=error><strong>Error:</strong> {{ error }}

@@ -129,7 +129,7 @@
     <div id="big-container" class="{% block bigcontainerclass %}{% endblock %}">
     <div id="banner">
       <h1>
-        <a href="/" title="main page">
+        <a href="{{url_for('index')}}" title="main page">
           Papers<sup>γ</sup></a>
         {% block banner2 %}{% endblock %}
       </h1>
@@ -138,25 +138,25 @@
       <div class="menuitem">
          {% if user_authenticated() %}
          <b><a 
-                     href="/{{session['user']['username'] | e}}"
+                     href="{{ url_for('usersite',session['user']['username']|e) }}"
                      title="Your home page">
            {{session['user']['username'] | e}}</a> | </b> 
          {% endif %}
-          <a href="/paper/add" title="add a new paper">Add paper</a> /
-          <a href="/catalog" 
+          <a href="{{url_for('add_paper')}}" title="add a new paper">Add paper</a> /
+          <a href="{{url_for('catalog')}}"
              title="lists of domains, authors, keywords and users">See catalog</a> /
 
           {% if not user_authenticated() %}
-           <a href="/login" title="Login">Login</a> / 
-           <a href="/register" title="or register">Register</a> 
+           <a href="{{url_for('login')}}" title="Login">Login</a> / 
+           <a href="{{url_for('register')}}" title="or register">Register</a> 
          {% else %}
-            <a href="/logout" title="Logout">Logout</a>
+            <a href="{{url_for('logout')}}" title="Logout">Logout</a>
           {% endif %}
             <br>
 
       {% if not search_page %}
       <div class="search">
-        <form action="/catalog" method="get">
+        <form action="{{url_for('catalog')}}" method="get">
           <input type="search" value=""
                  placeholder="Search"
                  name="q" 
@@ -183,7 +183,7 @@
       Papersᵞ — Discussing board for scientific
       papers <br>
       <a href="http://github.com/kerzol/papers/tree/ub">Source code</a> /
-      <a href="/about">About</a> <!-- / <a href="/faq">F.A.Q</a><br> -->
+      <a href="{{url_for('about')}}">About</a> <!-- / <a href="{{url_for('faq')}}">F.A.Q</a><br> -->
 
     </div> <!-- /banner-bottom -->
 

@@ -5,7 +5,7 @@
 
 
 
-  <form action="/login" method="post" class=usualform 
+  <form action="{{url_for('login')}}" method="post" class=usualform 
         style="width:25em;">
     {% if error %}
     <p class=error><strong>Error:</strong> {{ error }}
@@ -21,7 +21,7 @@
       <input id=pass type=password name=password>
       <br/>
       <small>
-        <a href="/change-password"> Forgot your password? </a>
+        <a href="{{url_for('new_password_link')}}"> Forgot your password? </a>
       </small>
       <br/>
 

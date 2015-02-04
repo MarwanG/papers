@@ -5,12 +5,12 @@
             {% if user_authenticated() %}
              {% if liked[entry.paperid] %}
               <a 
-                href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}/unlike"
+                href="{{url_for('unlike_paper', paperid=entry.paperid|e, title=entry.title|e)}}"
                 title="Unlike this paper"
                 class="liked"
                 >★</a>
               {% else %}
-               <a href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}/like"
+               <a href="{{url_for('like_paper', paperid=entry.paperid|e, title=entry.title|e)}}"
                   title="Click if you like this paper">☆</a>
               {% endif %}
             {% else %} {# anonymous #}
@@ -29,7 +29,7 @@
         <div class="paper-preview">
 
           <a class="preview" 
-             href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}"
+             href="{{url_for('onepaper', paperid=entry.paperid|e, title=entry.title|e)}}"
              title="Read the paper and discussion">
 
             <img src="/static/memory/previews/{{ entry.paperid}}.png" 
@@ -44,7 +44,7 @@
 
           {% if commentsTail[entry.paperid] %}
           <a class="seeallcomments"
-             href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}"
+             href="{{url_for('onepaper', paperid=entry.paperid|e, title=entry.title|e)}}"
              title="See all comments"> … </a> 
 
           {{ c.build_list(commentsTail[entry.paperid]) }}
@@ -54,8 +54,8 @@
 
         </div>  <!-- /comment-block-preview -->
         
-         <a class="discussbtn" href="/paper/{{ entry.paperid|e }}/{{
-             entry.title|e}}" 
+         <a class="discussbtn"
+             href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}"
 
              title="Read the paper, add your comments">
              Read the paper, add your comments… </a>

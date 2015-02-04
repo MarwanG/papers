@@ -15,7 +15,7 @@
         <ol class="list-of-papers">
           {% for p in papers %}
           <li>
-            <a href="/paper/{{p.paperid|e}}/{{p.title|e}}"
+            <a href="{{url_for('onepaper', paperid=p.paperid|e, title=p.title|e)}}"
                class="title">
               {{p.title|e}}
             </a>
@@ -44,7 +44,7 @@
       {% set comma = joiner(",") %}
       {% for d in domains %}{{
       comma()}}
-      <a href="/domain/{{d.domainname | e}}">{{d.domainname}}</a>{%
+      <a href="{{url_for('domain', domainname=d.domainname|e)}}">{{d.domainname}}</a>{%
       endfor %}
     </div>
    
@@ -53,7 +53,7 @@
       {% set comma = joiner(",") %}
       {% for k in keywords %}{{
       comma()}}
-      <a href="/keyword/{{k.keyword | e}}">{{k.keyword}}</a>{%
+      <a href="{{url_for('keyword', keyword=k.keyword|e)}}">{{k.keyword}}</a>{%
       endfor %}
     </div>
 
@@ -62,7 +62,7 @@
       {% set comma = joiner(",") %}
       {% for a in authors %}{{
       comma()}}
-      <a href="/author/{{a.fullname | e}}">{{a.fullname}}</a>{%
+      <a href="{{url_for('author', fullname=a.fullname|e)}}">{{a.fullname}}</a>{%
       endfor %}
     </div>
 
@@ -72,7 +72,7 @@
       {% for u in users %}
       {#- not anonymous anonymous -#}
       {%- if u.userid != 1 -%}
-      {{comma()}} <a href="/{{u.username | e}}">{{u.username}}</a>
+      {{comma()}} <a href="{{url_for('usersite', username=u.username|e)}}">{{u.username}}</a>
       {%- endif -%}
       {% endfor %}
     </div>

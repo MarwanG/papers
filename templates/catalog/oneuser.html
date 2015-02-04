@@ -3,7 +3,7 @@
 
 {% block before_list %}
   <h4>Papers liked by 
-    <a href="/{{username | e}}" title="Personal page of this user">{{username}}</a>:
+    <a href="{{url_for('usersite',username=username|e)}}" title="Personal page of this user">{{username}}</a>:
   </h4>
 {% endblock %}
 
