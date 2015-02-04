@@ -152,7 +152,7 @@ def add_paper():
               ppng = os.path.join(app.config['PREVIEW_FOLDER'],
                                   filename)
 
-              os.system('papersite/gen.sh ' + ppdf +  ' ' + ppng)
+              os.system(app.config['PREVIEW_GENERATOR'] + ' ' + ppdf +  ' ' + ppng)
               # end of hack
               flash('You successfully upload the paper')
             return redirect(url_for('onepaper',

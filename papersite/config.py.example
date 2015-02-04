@@ -16,5 +16,7 @@ appc = dict(
     PERMANENT_SESSION_LIFETIME=timedelta(days=999),
     UPLOAD_FOLDER = 'static/memory/pdfs',
     PREVIEW_FOLDER = 'static/memory/previews',
+    APPLICATION_ROOT = '/app/',
+    PREVIEW_GENERATOR = 'static/memory/gen.sh
 )
 
