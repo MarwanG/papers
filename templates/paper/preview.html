@@ -55,7 +55,7 @@
         </div>  <!-- /comment-block-preview -->
         
          <a class="discussbtn"
-             href="/paper/{{ entry.paperid|e }}/{{ entry.title|e}}"
+             href="{{url_for('onepaper', paperid=entry.paperid|e, title=entry.title|e)}}"
 
              title="Read the paper, add your comments">
              Read the paper, add your comments… </a>

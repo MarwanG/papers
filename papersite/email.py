@@ -73,7 +73,7 @@ Papers' team" % (u['username'], url_for('set_new_password',
     msg['To'] = usermail
 
     # Send the message via our own SMTP server.
-    s = smtplib.SMTP_SSL(MAIL_SERVER)
-    s.login(MAIL_USER, MAIL_PASS)
+    s = smtplib.SMTP(MAIL_SERVER)
+#    s.login(MAIL_USER, MAIL_PASS)
     s.send_message(msg)
     s.quit()
