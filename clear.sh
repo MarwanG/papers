@@ -3,6 +3,7 @@
 cd db
 rm papers.db
 ./create-database.sh
+chmod o+w papers.db
 cd ..
 
 rm static/memory/pdfs/*

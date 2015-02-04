@@ -1,7 +1,4 @@
 #!/bin/bash
-
-
-
 inf=$1
 of=$2
 
@@ -23,4 +20,3 @@ gs -o $of                                                \
    -c "<</Install {-$x1 -$y1 translate}>> setpagedevice" \
    -f $inf
 
-   

@@ -5,17 +5,16 @@
 
 {% block body %}
       <div class="entry">
-
            <div class="vote-block">
             {% if user_authenticated() %}
              {% if liked %}
               <a 
-                href="{{url_for('unlike_paper', paperid=entry.paperid|e, title=entry.title|e)}}"
+                href="{{url_for('unlike_paper', paperid=entry.paperid|int, title=entry.title|e)}}"
                 title="Unlike this paper"
                 class="liked"
                 >★</a>
               {% else %}
-               <a href="{{url_for('like_paper', paperid=entry.paperid|e, title=entry.title|e)}}"
+               <a href="{{url_for('like_paper', paperid=entry.paperid|int, title=entry.title|e)}}"
                   title="Click if you like this paper">☆</a>
               {% endif %}
             {% else %} {# anonymous #}
@@ -38,7 +37,7 @@
              href="{{ entry.getlink|e }}"
              title="Click to read the entire paper">
 
-            <img src="/static/memory/previews/{{ entry.paperid}}.png" 
+            <img src="/static/memory/previews/{{entry.paperid|int}}.png" 
                  alt="{{entry.title | e}}"/>
           </a>
 
@@ -90,7 +89,7 @@
           
           <h3> Discussion: </h3>
           
-          {{ c.build_list(comments) }}
+           {{ c.build_list(comments) }}
 
           {% include "comment/newcomment.html" %}
         </div>  <!-- /comment-block -->

@@ -138,7 +138,7 @@
       <div class="menuitem">
          {% if user_authenticated() %}
          <b><a 
-                     href="{{ url_for('usersite',session['user']['username']|e) }}"
+                     href="{{ url_for('usersite', username=session['user']['username']|e) }}"
                      title="Your home page">
            {{session['user']['username'] | e}}</a> | </b> 
          {% endif %}

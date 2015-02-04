@@ -101,7 +101,7 @@ Preview.callback.autoReset = true;  // make sure it can run more than once
 
 <div class="new-comment">
 
-  <form action="{{url_for('add_comment', paperid=entry.paperid|e, title=entry.title|e)}}/add-comment"
+  <form action="{{url_for('add_comment', paperid=entry.paperid|e, title=entry.title|e)}}"
         method="post">
 
     {% if error %}
