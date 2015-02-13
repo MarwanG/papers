@@ -20,7 +20,11 @@
     <div class="cbody">{{c.comment|e}}</div>
     
     <div class="cfooter">
-      <span class="datetime"> {{ c.createtime|e }} </span>
+      <span class="datetime"> 
+        <a href="#comment-{{c.commentid}}" title="link to this comment">
+           {{ c.createtime|e }}
+       </a>
+      </span>
     </div>
 
   </div>
