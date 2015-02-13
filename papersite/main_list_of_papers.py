@@ -49,7 +49,7 @@ def previews(seq):
                                 c.userid = u.userid and          \
                                 c.paperid = ?                    \
                           order by c.commentid                   \
-                         limit 2                                 \
+                         limit 1                                 \
                        ",
             [paper['paperid']]);
 
